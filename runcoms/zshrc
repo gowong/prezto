@@ -24,6 +24,7 @@ alias ll='ls -la'
 alias work='echo "Use werk"'
 alias history='history -f -100'
 
+# begin devtools provisioning to setup local development
 # Remove any existing /box/www/devtools_readonly/bin from the path
 PATH=$(echo $PATH | sed 's/\/box\/www\/devtools_readonly\/bin[:]*//g')
 
@@ -32,16 +33,16 @@ PATH=$(echo $PATH | sed 's/\/usr\/local\/bin[:]*//g')
 
 # Add /usr/local/bin and /box/www/devtools_readonly/bin to the top of your PATH
 export PATH=/usr/local/bin:/box/www/devtools_readonly/bin:$PATH
-# end devtools provisioning
 
 # This line was automatically added by Toolbox.
 export PATH="/Users/gwong/.toolbox/homebrew/toolbox-bin:/Users/gwong/.toolbox/homebrew/sbin:$PATH"
+# end devtools provisioning
 
 export PATH="/Users/gwong/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm (SLOWS DOWN STARTUP)
-alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+# source $(brew --prefix nvm)/nvm.sh  # This loads nvm (SLOWS DOWN STARTUP)
+alias loadnvm='source $(brew --prefix nvm)/nvm.sh'
 
 # printf -- $'\033]6;1;bg;red;brightness;40\a\033]6;1;bg;green;brightness;42\a\033]6;1;bg;blue;brightness;54\a'
 
