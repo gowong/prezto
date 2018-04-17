@@ -23,6 +23,8 @@ alias sshn='ssh -t notes-app-gwong "cd /home/gwong/box-notes; zsh"'
 alias ll='ls -la'
 alias work='echo "Use werk"'
 alias history='history -f -100'
+# On Mac: requires 'brew install coreutils'
+alias readlink='greadlink'
 
 # begin devtools provisioning to setup local development
 # Remove any existing /box/www/devtools_readonly/bin from the path
