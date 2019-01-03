@@ -52,6 +52,11 @@ export NVM_DIR="$HOME/.nvm"
 # source $(brew --prefix nvm)/nvm.sh  # This loads nvm (SLOWS DOWN STARTUP)
 alias loadnvm='source $(brew --prefix nvm)/nvm.sh'
 
+# Use latest (homebrew) version of bison (used to build thrift compiler
+# from source, which is then used to build source code from thrift file)
+# export PATH="/usr/local/opt/bison/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/bison/lib"
+
 # Needed for skynet
 alias loaddocker='eval $(docker-machine env) && docker-login-artifactory-ro'
 # eval $(docker-machine env)
