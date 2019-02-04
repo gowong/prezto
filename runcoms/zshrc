@@ -43,6 +43,9 @@ export PATH=/usr/local/bin:/box/www/devtools_readonly/bin:$PATH
 export PATH="/Users/gwong/.toolbox/homebrew/toolbox-bin:/Users/gwong/.toolbox/homebrew/sbin:$PATH"
 # end devtools provisioning
 
+# Java 8
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 # Android NDK
 export PATH="/Users/gwong/android-ndk-r17b:$PATH"
 
