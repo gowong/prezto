@@ -14,6 +14,7 @@ fi
 # Immediately execute commands from history (ex. !150)
 setopt no_hist_verify
 
+
 # Aliases
 alias dev='ssh gwong.dev.box.net -R "9000:localhost:9000"'
 alias a='cd /box/etc/application'
@@ -28,6 +29,11 @@ alias work='echo "Use werk"'
 alias history='history -f -100'
 # On Mac: requires 'brew install coreutils'
 alias readlink='greadlink'
+# Always loading nvm slows down terminal startup
+alias loadnvm='source $(brew --prefix nvm)/nvm.sh'
+# Needed for skynet
+alias loaddocker='docker-machine start default; eval $(docker-machine env); docker-login-artifactory-ro'
+
 
 # begin devtools provisioning to setup local development
 # Remove any existing /box/www/devtools_readonly/bin from the path
@@ -43,28 +49,26 @@ export PATH=/usr/local/bin:/box/www/devtools_readonly/bin:$PATH
 export PATH="/Users/gwong/.toolbox/homebrew/toolbox-bin:/Users/gwong/.toolbox/homebrew/sbin:$PATH"
 # end devtools provisioning
 
+
+# Env variables
+# Use vim as default editor
+export VISUAL="vim"
 # Java 8
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
-# Android NDK
-export PATH="/Users/gwong/android-ndk-r17b:$PATH"
-
-export PATH="/Users/gwong/bin:$PATH"
-
 export NVM_DIR="$HOME/.nvm"
-# source $(brew --prefix nvm)/nvm.sh  # This loads nvm (SLOWS DOWN STARTUP)
-alias loadnvm='source $(brew --prefix nvm)/nvm.sh'
-
 # Use latest (homebrew) version of bison (used to build thrift compiler
 # from source, which is then used to build source code from thrift file)
 # export PATH="/usr/local/opt/bison/bin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/bison/lib"
 
-# Needed for skynet
-alias loaddocker='docker-machine start default; eval $(docker-machine env); docker-login-artifactory-ro'
 
-# printf -- $'\033]6;1;bg;red;brightness;40\a\033]6;1;bg;green;brightness;42\a\033]6;1;bg;blue;brightness;54\a'
+# PATH
+# Android NDK
+export PATH="/Users/gwong/android-ndk-r17b:$PATH"
+export PATH="/Users/gwong/bin:$PATH"
 
+
+# Terminal colors
 if [[ -n "$ITERM_SESSION_ID" ]]; then
     tab-color() {
         echo -ne "\033]6;1;bg;red;brightness;$1\a"
