@@ -60,8 +60,9 @@ export NVM_DIR="$HOME/.nvm"
 # Use latest (homebrew) version of bison (used to build thrift compiler
 # from source, which is then used to build source code from thrift file)
 # export PATH="/usr/local/opt/bison/bin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/bison/lib"
-
+# export LDFLAGS="-L/usr/local/opt/bison/lib-L/usr/local/opt/openssl/lib"
+# export CPPFLAGS="-I/usr/local/opt/openssl/include"
+# export BOOST_ROOT="/usr/local/opt/boost"
 
 # PATH
 # Android NDK
