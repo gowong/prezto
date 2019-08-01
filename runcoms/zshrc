@@ -67,6 +67,9 @@ export NVM_DIR="$HOME/.nvm"
 # PATH
 # Android NDK
 export PATH="/Users/gwong/android-ndk-r17b:$PATH"
+# VS Code
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# Misc.
 export PATH="/Users/gwong/bin:$PATH"
 
 
