@@ -73,6 +73,8 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export PATH="$PATH:/Users/gwong/bin"
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Terminal colors
 if [[ -n "$ITERM_SESSION_ID" ]]; then
