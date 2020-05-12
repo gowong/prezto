@@ -16,7 +16,7 @@ setopt no_hist_verify
 
 
 # Aliases
-alias dev='ssh gwong.dev.box.net -R "9000:localhost:9000"'
+# alias dev='ssh gwong.dev.box.net -R "9000:localhost:9000"'
 alias a='cd /box/etc/application'
 alias i='cd /Users/gwong/workspace/infra'
 alias de='cd /Users/gwong/deployment-config'
@@ -121,7 +121,15 @@ fi
 
 # Add confirmation to dangerous commands
 git() {
-    if [[ $@ == "stash drop" ]]; then
+    if [[ $@ == "stash clear" ]]; then
+        echo "Are you sure you want to drop ALL stashes? [y/N]"
+        read response
+        case "$response" in
+            [yY][eE][sS]|[yY])
+               command git "$@"
+                ;;
+        esac
+    elif [[ $@ == "stash drop" ]]; then
         echo "Are you sure you want to drop your stash? [y/N]"
         read response
         case "$response" in
