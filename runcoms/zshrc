@@ -32,7 +32,6 @@ alias readlink='greadlink'
 # Always loading nvm slows down terminal startup
 alias loadnvm='source $(brew --prefix nvm)/nvm.sh'
 # Needed for skynet
-alias loaddocker='docker-machine start default; eval $(docker-machine env); docker-login-artifactory-ro'
 alias pods='~/workspace/pod-helper/pod_mgmt.sh'
 
 
