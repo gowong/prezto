@@ -109,6 +109,8 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
             fi
         elif [[ "$1" =~ "^sshn" ]]; then
             tab-color 87 199 255
+        elif [[ "$1" =~ "^sshb" ]]; then
+            tab-color 255 92 87
         else
             tab-reset
         fi
