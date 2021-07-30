@@ -17,12 +17,12 @@ setopt no_hist_verify
 
 # Aliases
 # alias dev='ssh gwong.dev.box.net -R "9000:localhost:9000"'
-alias a='cd /box/etc/application'
+alias a='cd ~/box/etc/application'
 alias i='cd /Users/gwong/workspace/infra'
 alias de='cd /Users/gwong/deployment-config'
-alias n='cd /box/www/box-notes'
-alias nn='cd /box/www/box-notes-desktop'
-alias c='cd /box/www/current_local'
+alias n='cd ~/box/www/box-notes'
+alias nn='cd ~/box/www/box-notes-desktop'
+alias c='cd ~/box/www/current_local'
 alias sshn='ssh -t notes-app-gwong "cat /etc/motd; cd /home/gwong/box-notes; bash;"'
 alias sshb='ssh bastion'
 alias ll='ls -la'
@@ -38,13 +38,13 @@ alias pods='~/workspace/pod-helper/pod_mgmt.sh'
 
 # begin devtools provisioning to setup local development
 # Remove any existing /box/www/devtools_readonly/bin from the path
-PATH=$(echo $PATH | sed 's/\/box\/www\/devtools_readonly\/bin[:]*//g')
+PATH=$(echo $PATH | sed 's/~\/box\/www\/devtools_readonly\/bin[:]*//g')
 
 # Remove any existing /usr/local/bin from the path
 PATH=$(echo $PATH | sed 's/\/usr\/local\/bin[:]*//g')
 
 # Add /usr/local/bin and /box/www/devtools_readonly/bin to the top of your PATH
-export PATH=/usr/local/bin:/box/www/devtools_readonly/bin:$PATH
+export PATH=/usr/local/bin:~/box/www/devtools_readonly/bin:$PATH
 
 # This line was automatically added by Toolbox.
 export PATH="/Users/gwong/.toolbox/homebrew/toolbox-bin:/Users/gwong/.toolbox/homebrew/sbin:$PATH"
@@ -89,9 +89,9 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
     tab-reset() { echo -ne "\033]6;1;bg;*;default\a" }
 
     function iterm2_tab_precmd() {
-        # if [[ "$PWD" == "/box/www/box-notes" ]]; then
+        # if [[ "$PWD" == "~/box/www/box-notes" ]]; then
         #     tab-color 87 199 255
-        # elif [[ "$PWD" == "/box/www/current_local" ]]; then
+        # elif [[ "$PWD" == "~/box/www/current_local" ]]; then
         #     tab-color 255 106 193
         # else
             tab-reset
