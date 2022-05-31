@@ -54,8 +54,19 @@ export PATH="/Users/gwong/.toolbox/homebrew/toolbox-bin:/Users/gwong/.toolbox/ho
 # Env variables
 # Use vim as default editor
 export VISUAL="vim"
+
 # Java 8
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+alias java17='export JAVA_HOME=$JAVA_17_HOME'
+# Use JDK 8 by default.
+export JAVA_HOME=$JAVA_8_HOME
+#export JAVA_HOME=$JAVA_11_HOME
+#export JAVA_HOME=$JAVA_17_HOME
+
 export NVM_DIR="$HOME/.nvm"
 # Use latest (homebrew) version of bison (used to build thrift compiler
 # from source, which is then used to build source code from thrift file)
