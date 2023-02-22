@@ -17,12 +17,12 @@ setopt no_hist_verify
 
 # Aliases
 # alias dev='ssh gwong.dev.box.net -R "9000:localhost:9000"'
-alias a='cd ~/box/etc/application'
+alias a='cd /box/etc/application'
 alias i='cd /Users/gwong/workspace/infra'
 alias de='cd /Users/gwong/deployment-config'
-alias n='cd ~/box/www/box-notes'
-alias nn='cd ~/box/www/box-notes-desktop'
-alias c='cd ~/box/www/current_local'
+alias n='cd /box/www/box-notes'
+alias nn='cd /box/www/box-notes-desktop'
+alias c='cd /box/www/current_local'
 alias sshn='ssh -t notes-app-gwong "cat /etc/motd; cd /home/gwong/box-notes; bash;"'
 alias sshb='ssh bastion'
 alias ll='ls -la'
@@ -32,30 +32,24 @@ alias history='history -f -100'
 alias readlink='greadlink'
 # Always loading nvm slows down terminal startup
 alias loadnvm='source $(brew --prefix nvm)/nvm.sh'
-# Needed for skynet
-alias pods='~/workspace/pod-helper/pod_mgmt.sh'
-
 
 # begin devtools provisioning to setup local development
+
 # Remove any existing /box/www/devtools_readonly/bin from the path
-PATH=$(echo $PATH | sed 's/~\/box\/www\/devtools_readonly\/bin[:]*//g')
+PATH=$(echo $PATH | sed 's/\/box\/www\/devtools_readonly\/bin[:]*//g')
 
 # Remove any existing /usr/local/bin from the path
 PATH=$(echo $PATH | sed 's/\/usr\/local\/bin[:]*//g')
 
 # Add /usr/local/bin and /box/www/devtools_readonly/bin to the top of your PATH
-export PATH=/usr/local/bin:~/box/www/devtools_readonly/bin:$PATH
-
-# This line was automatically added by Toolbox.
-export PATH="/Users/gwong/.toolbox/homebrew/toolbox-bin:/Users/gwong/.toolbox/homebrew/sbin:$PATH"
+export PATH=/usr/local/bin:/box/www/devtools_readonly/bin:$PATH
 # end devtools provisioning
-
 
 # Env variables
 # Use vim as default editor
 export VISUAL="vim"
 
-# Java 8
+# Java
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
@@ -77,23 +71,24 @@ export NVM_DIR="$HOME/.nvm"
 
 # PATH
 # Android NDK
-export PATH="$PATH:/Users/gwong/android-ndk-r17b"
+#export PATH="$PATH:/Users/gwong/android-ndk-r17b"
 # VS Code
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 # Misc.
 export PATH="$PATH:/Users/gwong/bin"
-# yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# yarn (not needed with npm install yarn)
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 # FPM (ruby gem)
 # export PATH="/usr/local/lib/ruby/gems/2.7.0/gems/fpm-1.14.2/bin:$PATH"
 # PHP
-export PATH="/usr/local/opt/php@7.3/bin:$PATH"
-export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
 # Python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-# Force to use python 2
+# export PATH="/usr/local/opt/python/libexec/bin:$PATH" # Not needed with brew install python
+alias python=python3
+# Force to use python 2 (Doesn't work with newer MacOS versions that no longer bundle python2)
 # alias python3=python
 
 # Terminal colors
@@ -109,9 +104,9 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
     tab-reset() { echo -ne "\033]6;1;bg;*;default\a" }
 
     function iterm2_tab_precmd() {
-        # if [[ "$PWD" == "~/box/www/box-notes" ]]; then
+        # if [[ "$PWD" == "/box/www/box-notes" ]]; then
         #     tab-color 87 199 255
-        # elif [[ "$PWD" == "~/box/www/current_local" ]]; then
+        # elif [[ "$PWD" == "/box/www/current_local" ]]; then
         #     tab-color 255 106 193
         # else
             tab-reset
