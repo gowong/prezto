@@ -90,6 +90,8 @@ export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
 alias python=python3
 # Force to use python 2 (Doesn't work with newer MacOS versions that no longer bundle python2)
 # alias python3=python
+# rsync
+export PATH="/opt/homebrew/opt/rsync/bin:$PATH"
 
 # Terminal colors
 if [[ -n "$ITERM_SESSION_ID" ]]; then
