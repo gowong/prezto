@@ -92,6 +92,7 @@ alias python=python3
 # alias python3=python
 # rsync
 export PATH="/opt/homebrew/opt/rsync/bin:$PATH"
+export DEVPOD_RSYNC_OPTIONS='-i ~/.ssh/id_rsa_devpod'
 
 # Terminal colors
 if [[ -n "$ITERM_SESSION_ID" ]]; then
