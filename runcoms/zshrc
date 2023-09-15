@@ -86,8 +86,9 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
 # Python
+export PATH=$(pyenv root)/shims:$PATH
 # export PATH="/usr/local/opt/python/libexec/bin:$PATH" # Not needed with brew install python
-alias python=python3
+# alias python=python3
 # Force to use python 2 (Doesn't work with newer MacOS versions that no longer bundle python2)
 # alias python3=python
 # rsync
