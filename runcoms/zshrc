@@ -57,7 +57,7 @@ export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
-# Use JDK 8 by default.
+# Set default Java version
 export JAVA_HOME=$JAVA_17_HOME
 #export JAVA_HOME=$JAVA_11_HOME
 #export JAVA_HOME=$JAVA_17_HOME
