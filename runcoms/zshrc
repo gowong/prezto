@@ -65,6 +65,8 @@ export JAVA_HOME=$JAVA_17_HOME
 #export JAVA_HOME=$JAVA_11_HOME
 #export JAVA_HOME=$JAVA_17_HOME
 
+# Disable yarn or npm commands automatically modifying package.json
+export COREPACK_ENABLE_AUTO_PIN=0
 export NVM_DIR="$HOME/.nvm"
 # Use latest (homebrew) version of bison (used to build thrift compiler
 # from source, which is then used to build source code from thrift file)
