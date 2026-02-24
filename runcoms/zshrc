@@ -107,6 +107,8 @@ export DEVPOD_RSYNC_OPTIONS='-i ~/.ssh/id_rsa_devpod'
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 # AWS (for claude code)
 export AWS_PROFILE=Claude
+export AWS_REGION=us-west-2
+export CLAUDE_CODE_USE_BEDROCK=1
 
 # Terminal colors
 if [[ -n "$ITERM_SESSION_ID" ]]; then
