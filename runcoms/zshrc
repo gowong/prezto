@@ -109,6 +109,8 @@ export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 export AWS_PROFILE=Claude
 export AWS_REGION=us-west-2
 export CLAUDE_CODE_USE_BEDROCK=1
+# Cursor
+export PATH="$HOME/.local/bin:$PATH"
 
 # Terminal colors
 if [[ -n "$ITERM_SESSION_ID" ]]; then
